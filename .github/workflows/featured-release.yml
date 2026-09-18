@@ -3,10 +3,14 @@ name: Create Featured Release
 on:
   push:
     tags:
-      - 'featured-*'
+      - "featured-*"
 
 permissions:
   contents: write
+
+concurrency:
+  group: featured-${{ github.ref_name }}
+  cancel-in-progress: false
 
 jobs:
   create-featured-release:
@@ -14,17 +18,39 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate pack
+        run: |
+          set -euo pipefail
+          test -f pack.mcmeta || { echo "pack.mcmeta missing"; exit 1; }
+
+      - name: Compute release name
+        id: meta
+        run: echo "name=${GITHUB_REF_NAME#featured-}" >> "$GITHUB_OUTPUT"
 
       - name: Zip Resource Pack
         run: |
-          zip -r tumafin_resourcepack.zip . \
-            -x "*.git*" "*.github*" "README.md" "*.zip" "*.txt"
+          set -euo pipefail
+          zip -r tumafin_resourcepack.zip \
+            pack.mcmeta pack.png CREDITS.txt assets/
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resourcepack-${{ github.ref_name }}
+          path: tumafin_resourcepack.zip
+          retention-days: 30
 
       - name: Create Featured Release
         uses: softprops/action-gh-release@v2
         with:
           files: ./tumafin_resourcepack.zip
           generate_release_notes: true
-          name: "Featured: ${{ github.ref_name }}"
+          name: "Featured: ${{ steps.meta.outputs.name }}"
+          fail_on_unmatched_files: true
+          draft: false
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

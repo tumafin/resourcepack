@@ -1,0 +1,7 @@
+Credits
+
+This resource pack uses assets from the following creators:
+
+[Cheerful](https://modrinth.com/resourcepack/cheerful) by Manchick (Licensed CC-BY-4.0)
+[Small Caps Font](https://modrinth.com/resourcepack/small-caps) by Freties (Licensed MIT)
+[Asylum Notes Font](https://modrinth.com/resourcepack/asylum-notes) by Xllifi (Licensed CC-BY-4.0)
