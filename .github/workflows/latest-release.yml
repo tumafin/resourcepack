@@ -1,0 +1,27 @@
+name: Update Latest Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Zip Resource Pack
+        run: |
+          zip -r tumafin_resourcepack.zip . \
+            -x "*.git*" "*.github*" "README.md" "*.zip" "*.txt"
+
+      - name: Upload to latest release
+        run: gh release upload latest tumafin_resourcepack.zip --clobber
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,30 @@
+name: Create Featured Release
+
+on:
+  push:
+    tags:
+      - 'featured-*'
+
+permissions:
+  contents: write
+
+jobs:
+  create-featured-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Zip Resource Pack
+        run: |
+          zip -r tumafin_resourcepack.zip . \
+            -x "*.git*" "*.github*" "README.md" "*.zip" "*.txt"
+
+      - name: Create Featured Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./tumafin_resourcepack.zip
+          generate_release_notes: true
+          name: "Featured: ${{ github.ref_name }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

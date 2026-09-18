@@ -1,0 +1,30 @@
+{
+  "pack": {
+    "description": [
+      { "text": "@", "color": "#88F544" },
+      { "text": "t", "color": "#86F343" },
+      { "text": "u", "color": "#84F142" },
+      { "text": "m", "color": "#82EF41" },
+      { "text": "a", "color": "#80ED40" },
+      { "text": "f", "color": "#7EEC3F" },
+      { "text": "i", "color": "#7CEA3E" },
+      { "text": "n", "color": "#7AE83D" },
+      { "text": "/", "color": "#78E63C" },
+      { "text": "r", "color": "#76E43B" },
+      { "text": "e", "color": "#74E23A" },
+      { "text": "s", "color": "#71E039" },
+      { "text": "o", "color": "#6FDE38" },
+      { "text": "u", "color": "#6DDC37" },
+      { "text": "r", "color": "#6BDA36" },
+      { "text": "c", "color": "#69D935" },
+      { "text": "e", "color": "#67D734" },
+      { "text": "p", "color": "#65D533" },
+      { "text": "a", "color": "#63D332" },
+      { "text": "c", "color": "#61D131" },
+      { "text": "k", "color": "#5FCF30" }
+    ],
+    "pack_format": 97,
+    "min_format": 88,
+    "max_format": 97
+  }
+}

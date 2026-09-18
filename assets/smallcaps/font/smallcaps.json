@@ -1,0 +1,92 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "smallcaps:font/ru.png",
+      "height": 8,
+      "ascent": 7,
+      "chars": [
+        "АБВГЕЁЖЗИЙКЛМНОПРСТУХЦЧШЬЭЯ",
+        "абвгеёжзийклмнопрстухцчшьэя"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "smallcaps:font/ua.png",
+      "height": 8,
+      "ascent": 7,
+      "chars": [
+        "АБВГҐЕЄЖЗИІЇЙКЛМНОПРСТУХЦЧШЬЯ",
+        "абвгґеєжзиіїйклмнопрстухцчшья"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "smallcaps:font/en.png",
+      "height": 8,
+      "ascent": 7,
+      "chars": [
+        "ABCDEFGHIKLMNOPQRSTUVWXYZ",
+        "abcdefghiklmnopqrstuvwxyz"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "smallcaps:font/kz.png",
+      "height": 8,
+      "ascent": 7,
+      "chars": [
+        "АӘБВГЕЁЖЗИЙКҚЛМНОӨПРСТУҰҮХҺЦЧШІЬЭЯ",
+        "аәбвгеёжзийкқлмноөпрстуұүхһцчшіьэя"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "smallcaps:font/digits.png",
+      "height": 8,
+      "ascent": 7,
+      "chars": [
+        "0123456789!\"#%()*+,-./:;<=>?[\\]^_'{|}$&"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "smallcaps:font/digits2.png",
+      "height": 8,
+      "ascent": 7,
+      "chars": [
+        "@~«»"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "smallcaps:font/6px.png",
+      "height": 8,
+      "ascent": 7,
+      "chars": [
+        "ДЩЪJҒҢ",
+        "дщъjғң"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "smallcaps:font/7px.png",
+      "height": 8,
+      "ascent": 7,
+      "chars": [
+        "ЮЫФ",
+        "юыф"
+      ]
+    },
+    {
+      "type": "space",
+      "advances": {
+       " ": 4
+       }
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:include/default"
+    }
+  ]
+}
