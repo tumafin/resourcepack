@@ -1,12 +1,6 @@
 {
-    "providers": [
-        {
-            "type": "reference",
-            "id": "cheerful:emojis"
-        },
-        {
-            "type": "reference",
-            "id": "tumafin:brand"
-        }
-    ]
+  "providers": [
+    { "type": "reference", "id": "cheerful:emojis" },
+    { "type": "reference", "id": "tumafin:brand" }
+  ]
 }
