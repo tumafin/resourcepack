@@ -1,0 +1,29 @@
+[
+    {
+            "type": "bitmap",
+            "file": "tumafin:brand/logoBanner.png",
+            "ascent": 0,
+            "height": 24,
+            "chars": [
+                "\uE000"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "tumafin:brand/logoBanner.png",
+            "ascent": 0,
+            "height": 48,
+            "chars": [
+                "\uE001"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "tumafin:brand/domainBanner.png",
+            "ascent": 12,
+            "height": 15,
+            "chars": [
+                "\uE002"
+            ]
+        }
+]
