@@ -1,0 +1,36 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "tumafin:item/grapple"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 90, 0],
+			"translation": [0, 0.5, -0.5],
+			"scale": [0.7, 0.7, 0.7]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -90, 0],
+			"translation": [0, 0.75, -0.5],
+			"scale": [0.7, 0.7, 0.7]
+		},
+		"firstperson_righthand": {
+			"rotation": [5, 95, 0],
+			"translation": [3.5, 3.5, -1.5],
+			"scale": [0.7, 0.7, 0.7]
+		},
+		"firstperson_lefthand": {
+			"rotation": [5, -95, 0],
+			"translation": [3.5, 3.5, -1.5],
+			"scale": [0.7, 0.7, 0.7]
+		},
+		"ground": {
+			"translation": [0, 5, 0],
+			"scale": [0.7, 0.7, 0.7]
+		},
+		"gui": {
+			"rotation": [0, 0, 45],
+			"scale": [0.9, 0.9, 0.9]
+		}
+	}
+}

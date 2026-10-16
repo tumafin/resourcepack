@@ -31,5 +31,6 @@
 - [Cheerful](https://modrinth.com/resourcepack/cheerful) by Manchick (Licensed CC-BY-4.0)
 - [Small Caps Font](https://modrinth.com/resourcepack/small-caps) by Freties (Licensed MIT)
 - [Asylum Notes Font](https://modrinth.com/resourcepack/asylum-notes) by Xllifi (Licensed CC-BY-4.0)
+- [TheSalt's Text Effects](https://modrinth.com/resourcepack/thesalts-text-effects) by TheSalts (Licensed MIT)
   <!-- - [Slavic Font](https://modrinth.com/resourcepack/slavicfont/) by Lexa_ru (Licensed CC-BY-4.0) -->
   <!-- - [Der's Shaded Font](https://modrinth.com/resourcepack/shaded-font-plus) by DerDiamant (Licensed MIT) -->
