@@ -1,63 +1,63 @@
 name: Update Latest Release
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - "README.md"
-      - ".github/**"
-  workflow_dispatch:
+    push:
+        branches:
+            - main
+        paths-ignore:
+            - "README.md"
+            - ".github/**"
+    workflow_dispatch:
 
 permissions:
-  contents: write
+    contents: write
 
 concurrency:
-  group: update-latest
-  cancel-in-progress: true
+    group: update-latest
+    cancel-in-progress: true
 
 jobs:
-  update-latest:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    update-latest:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
-      - name: Validate pack
-        run: |
-          set -euo pipefail
-          test -f pack.mcmeta || { echo "pack.mcmeta missing"; exit 1; }
+            - name: Validate pack
+              run: |
+                  set -euo pipefail
+                  test -f pack.mcmeta || { echo "pack.mcmeta missing"; exit 1; }
 
-      - name: Zip Resource Pack
-        run: |
-          set -euo pipefail
-          zip -r tumafin_resourcepack.zip \
-            pack.mcmeta pack.png CREDITS.txt assets/
+            - name: Zip Resource Pack
+              run: |
+                  set -euo pipefail
+                  zip -r tumafin_resourcepack.zip \
+                    assets/ pack.mcmeta pack.png LICENSES/ LICENSE.md
 
-      - name: Ensure latest release exists
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release view latest >/dev/null 2>&1 || \
-            gh release create latest \
-              --title "Latest" \
-              --notes "Automatic latest build" \
-              --prerelease
+            - name: Ensure latest release exists
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  gh release view latest >/dev/null 2>&1 || \
+                    gh release create latest \
+                      --title "Latest" \
+                      --notes "Automatic latest build" \
+                      --prerelease
 
-      - name: Update release notes with changelog
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          NOTES=$(git log -1 --pretty=format:'%s%n%n%b' | sed '/^$/d')
-          [ -z "$NOTES" ] && NOTES="No description"
-          gh release edit latest --notes "$NOTES"
+            - name: Update release notes with changelog
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  NOTES=$(git log -1 --pretty=format:'%s%n%n%b' | sed '/^$/d')
+                  [ -z "$NOTES" ] && NOTES="No description"
+                  gh release edit latest --notes "$NOTES"
 
-      - name: Upload to latest release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          test -f tumafin_resourcepack.zip
-          gh release upload latest tumafin_resourcepack.zip --clobber
+            - name: Upload to latest release
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  set -euo pipefail
+                  test -f tumafin_resourcepack.zip
+                  gh release upload latest tumafin_resourcepack.zip --clobber
