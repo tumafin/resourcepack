@@ -26,7 +26,7 @@
 > ⚠️ Используйте ту версию набора, которая соответствует текущей версии
 > сервера. При обновлении сервера скачивайте новый релиз.
 
-## 🙏 Credits
+## 🔗 Third-Party Assets
 
 - [Cheerful](https://modrinth.com/resourcepack/cheerful) by Manchick (Licensed CC-BY-4.0)
 - [Small Caps Font](https://modrinth.com/resourcepack/small-caps) by Freties (Licensed MIT)
