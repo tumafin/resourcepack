@@ -1,6 +1,7 @@
 {
   "providers": [
     { "type": "reference", "id": "cheerful:emojis" },
+    { "type": "reference", "id": "fractures:emojis" },
     { "type": "reference", "id": "tumafin:brand" }
   ]
 }
