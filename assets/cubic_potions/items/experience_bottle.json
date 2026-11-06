@@ -1,0 +1,6 @@
+{
+	"model": {
+		"type": "minecraft:model",
+		"model": "cubic_potions:item/experience_bottle"
+	}
+}
